@@ -3,9 +3,28 @@ use <barn.scad>
 //     sphere(d=10);
 // }
 // asdf();
-color("Green") {
-    polygon(points = [[-100, -100], [-100, 100], [100, 100], [100, -100]]);
+
+module Ground() {
+    GroundLeft = -100;
+    GroundFront = -200;
+    GroundRight = 200;
+    GroundBack = 100;
+    GroundPoints = [
+        [GroundLeft, GroundFront],
+        [GroundLeft, GroundBack],
+        [GroundRight, GroundBack],
+        [GroundRight, GroundFront]
+    ];
+    translate([-100, -200]) {
+        color("PaleGreen") {
+            square([340, 300]);
+        }
+    }
 }
+Ground();
+// color("Green") {
+//     polygon(GroundPoints);
+// }
 rotate([90]) {
-    BarnWall();
+    BarnAll();
 }
