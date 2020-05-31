@@ -2,7 +2,7 @@ use <elements.scad>
 include <dimensions.scad>
 
 module FrontToBack(x) {
-    translate([x, 0, FloorHeight]) {
+    translate([x, 0, FloorHeight - 9]) {
         cube([1.5, CoopDepth, 5.5]);
     }
     translate([x, 0, CoopFrontHeight + CoopElevation]) {
@@ -14,7 +14,7 @@ module FrontToBack(x) {
     }
 }
 
-module CoopFrameSegment(right=false) {
+module FrameSegment(right=false) {
     PostHeight = CoopElevation + CoopFrontHeight;
     Post(PostHeight);
 
@@ -25,15 +25,22 @@ module CoopFrameSegment(right=false) {
     }
 }
 
+module FrameFloor() {
+    translate([0, -3, FloorHeight - 3.5]) {
+        cube([CoopWidth, 1.5, 3.5]);
+    }
+}
+
 module CoopFrame() {
     // Front left
     translate([1.5, -CoopDepth]) {
-        CoopFrameSegment();
+        FrameSegment();
     }
     translate([(CoopWidth / 2) - 1.75, -CoopDepth]) {
-        CoopFrameSegment();
+        FrameSegment();
     }
     translate([CoopWidth - 5, -CoopDepth]) {
-        CoopFrameSegment(true);
+        FrameSegment(true);
     }
+    FrameFloor();
 }
