@@ -88,8 +88,10 @@ module Stoop() {
 }
 
 module BarnAll() {
-    BarnWall();
-    Stoop();
+    rotate([90]) {
+        BarnWall();
+        Stoop();
+    }
 }
 
 BarnAll();

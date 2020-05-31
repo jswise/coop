@@ -1,9 +1,9 @@
 module DoublePoly() {
-    color("Blue", 0.5) {
+    color("Blue") {
         children();
     }
     translate([0, 0, 1]) {
-        color("Khaki", 0.5) {
+        color("Khaki") {
             children();
         }
     }

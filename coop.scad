@@ -1,8 +1,7 @@
 use <barn.scad>
-// module asdf() {
-//     sphere(d=10);
-// }
-// asdf();
+use <frame.scad>
+use <shell.scad>
+include <dimensions.scad>
 
 module Ground() {
     GroundLeft = -100;
@@ -25,6 +24,10 @@ Ground();
 // color("Green") {
 //     polygon(GroundPoints);
 // }
-rotate([90]) {
-    BarnAll();
+BarnAll();
+translate([CoopLeft, 0, 0]) {
+    CoopFrame();
+}
+translate([CoopLeft, 0, CoopElevation]) {
+    CoopShell();
 }
