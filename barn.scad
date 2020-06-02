@@ -1,7 +1,4 @@
 use <helpers.scad>
-// module BarnPoly() {
-//     polygon(points = [[0, 0], [0, 10], [10, 10], [10, 0]]);
-// }
 
 PerimeterRight = 240;
 PerimeterTop = 96;

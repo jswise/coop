@@ -1,6 +1,7 @@
 use <barn.scad>
 use <frame.scad>
 use <shell.scad>
+use <nestingbox.scad>
 include <dimensions.scad>
 
 module Ground() {
@@ -25,9 +26,14 @@ Ground();
 //     polygon(GroundPoints);
 // }
 BarnAll();
-translate([CoopLeft, 0, 0]) {
+translate([CoopLeft, -CoopDepth, 0]) {
     CoopFrame();
 }
-translate([CoopLeft, 0, CoopElevation]) {
+translate([CoopLeft + CoopWidth, 0, NestingBoxHeight]) {
+    rotate([0, 0, -90]) {
+        NestingBox();
+    }
+}
+translate([CoopLeft, -CoopDepth, CoopElevation]) {
     CoopShell();
 }

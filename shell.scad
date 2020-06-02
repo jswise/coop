@@ -10,7 +10,7 @@ module CoopShellSurface() {
 
 module CoopShell() {
     // Floor
-    translate([0, -CoopDepth]) {
+    translate([0, 0]) {
         CoopShellSurface() {
             polygon([
                 [0, 0],
@@ -22,19 +22,21 @@ module CoopShell() {
     }
 
     // Left
-    rotate([90, 0, -90]) {
-        CoopShellSurface() {
-            polygon([
-                [0, 0],
-                [0, CoopBackHeight],
-                [CoopDepth, CoopFrontHeight],
-                [CoopDepth, 0]
-            ]);
+    translate([0, CoopDepth]) {
+        rotate([90, 0, -90]) {
+            CoopShellSurface() {
+                polygon([
+                    [0, 0],
+                    [0, CoopBackHeight],
+                    [CoopDepth, CoopFrontHeight],
+                    [CoopDepth, 0]
+                ]);
+            }
         }
     }
 
     // Front
-    translate([0, -CoopDepth]) {
+    translate([0, 0]) {
         rotate([90]) {
             CoopShellSurface() {
                 polygon([
@@ -48,7 +50,7 @@ module CoopShell() {
     }
 
     // Right
-    translate([CoopWidth, -CoopDepth, 0]) {
+    translate([CoopWidth, 0, 0]) {
         rotate([90, 0, 90]) {
             CoopShellSurface() {
                 polygon([
@@ -62,7 +64,7 @@ module CoopShell() {
     }
 
     // Roof
-    translate([0, -CoopDepth, CoopFrontHeight]) {
+    translate([0, 0, CoopFrontHeight]) {
         rotate([RoofAngle, 0, 0]) {
             RoofWidth = CoopWidth + (2 * Overhang);
             echo(RoofWidth=RoofWidth);

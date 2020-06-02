@@ -26,20 +26,20 @@ module FrameSegment(right=false) {
 }
 
 module FrameFloor() {
-    translate([0, -3, FloorHeight - 3.5]) {
+    translate([0, 3.5, FloorHeight - 3.5]) {
         cube([CoopWidth, 1.5, 3.5]);
     }
 }
 
 module CoopFrame() {
     // Front left
-    translate([1.5, -CoopDepth]) {
+    translate([1.5, 0]) {
         FrameSegment();
     }
-    translate([(CoopWidth / 2) - 1.75, -CoopDepth]) {
+    translate([(CoopWidth / 2) - 1.75, 0]) {
         FrameSegment();
     }
-    translate([CoopWidth - 5, -CoopDepth]) {
+    translate([CoopWidth - 5, 0]) {
         FrameSegment(true);
     }
     FrameFloor();
