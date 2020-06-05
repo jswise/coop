@@ -58,7 +58,7 @@ module BarnLeft() {
 }
 
 module BarnWall() {
-    translate([0, PerimeterBottom]) {
+    translate([0, PerimeterBottom, -1.5]) {
         BarnFront();
         BarnLeft();
     }

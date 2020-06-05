@@ -1,15 +1,15 @@
-CoopElevation = 24;
+CoopElevation = 34.5;
 FloorHeight = CoopElevation + 12;
 Overhang = 6;
 CoopLeft = Overhang;
 
 CoopWidth = 96;
 CoopDepth = 72;
-CoopFrontHeight = 60;
-CoopBackHeight = 84;
+CoopFrontHeight = 61.5;
+CoopBackHeight = 80;
 DeltaHeight = CoopBackHeight - CoopFrontHeight;
 RoofAngle = atan(DeltaHeight / CoopDepth);
-RoofH = sqrt(pow(DeltaHeight, 2) + pow(CoopDepth, 2));
+RoofH = sqrt(pow(DeltaHeight, 2) + pow(CoopDepth, 2)) + Overhang;
 
 PostDepth = 24;
 

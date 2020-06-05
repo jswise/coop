@@ -10,13 +10,13 @@ module CoopShellSurface() {
 
 module CoopShell() {
     // Floor
-    translate([0, 0]) {
+    translate([0, 0, 12]) {
         CoopShellSurface() {
             polygon([
-                [0, 0],
+                [0, 3.5],
                 [0, CoopDepth],
                 [CoopWidth, CoopDepth],
-                [CoopWidth, 0]
+                [CoopWidth, 3.5]
             ]);
         }
     }
@@ -26,8 +26,8 @@ module CoopShell() {
         rotate([90, 0, -90]) {
             CoopShellSurface() {
                 polygon([
-                    [0, 0],
-                    [0, CoopBackHeight],
+                    [-1.5, 0],
+                    [-1.5, CoopBackHeight],
                     [CoopDepth, CoopFrontHeight],
                     [CoopDepth, 0]
                 ]);
@@ -35,27 +35,27 @@ module CoopShell() {
         }
     }
 
-    // Front
-    translate([0, 0]) {
-        rotate([90]) {
-            CoopShellSurface() {
-                polygon([
-                    [0, 0],
-                    [0, CoopFrontHeight],
-                    [CoopWidth, CoopFrontHeight],
-                    [CoopWidth, 0]
-                ]);
-            }
-        }
-    }
+    // // Front
+    // translate([0, -1.5]) {
+    //     rotate([90]) {
+    //         CoopShellSurface() {
+    //             polygon([
+    //                 [0, 0],
+    //                 [0, CoopFrontHeight],
+    //                 [CoopWidth, CoopFrontHeight],
+    //                 [CoopWidth, 0]
+    //             ]);
+    //         }
+    //     }
+    // }
 
     // Right
     translate([CoopWidth, 0, 0]) {
         rotate([90, 0, 90]) {
             CoopShellSurface() {
                 polygon([
-                    [0, 0],
-                    [0, CoopFrontHeight],
+                    [-1.5, 0],
+                    [-1.5, CoopFrontHeight],
                     [CoopDepth, CoopBackHeight],
                     [CoopDepth, 0]
                 ]);
