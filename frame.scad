@@ -5,6 +5,7 @@ module Plates() {
     RafterWidthH = 3.5 / cos(RoofAngle);
     RoofPlateOffset = RafterWidthH + 3.5 + (1.5 * tan(RoofAngle));
     TopPlateHeight = CoopBackHeight + CoopElevation - RoofPlateOffset;
+    echo(TopPlateHeight=TopPlateHeight);
     translate([0, CoopDepth-1.5, TopPlateHeight]) {
         cube([CoopWidth, 1.5, 3.5]);
     }

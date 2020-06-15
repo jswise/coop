@@ -1,4 +1,5 @@
 use <helpers.scad>
+use <stoop.scad>
 
 PerimeterRight = 240;
 PerimeterTop = 96;
@@ -10,10 +11,12 @@ WindowBottom = 43.5;
 WindowTop = WindowBottom + 37.5;
 
 DoorLeft = 114;
-DoorRight = DoorLeft + 29;
-DoorWidth = DoorRight - DoorLeft;
+DoorWidth = 29;
+DoorRight = DoorLeft + DoorWidth;
+DoorCenter = (DoorRight + DoorLeft) / 2;
 DoorBottom = 16;
 DoorTop = DoorBottom + 76;
+StoopTop = PerimeterBottom + DoorBottom;
 
 module BarnFront() {
     Perimeter = [
@@ -64,30 +67,12 @@ module BarnWall() {
     }
 }
 
-module Steps(StepCount) {
-    translate([0, -8, -8]) {
-        square([DoorWidth, 8]);
-        StepCount = StepCount - 1;
-        if (StepCount > 0) Steps(StepCount);
-    }
-}
-
-module Stoop() {
-    StoopLength = 48;
-    StoopTop = PerimeterBottom + DoorBottom;
-    
-    translate([DoorLeft, StoopTop, StoopLength]) {
-        rotate([-90]) {
-            square([DoorWidth, StoopLength]);
-            Steps(4);
-        }
-    }
-}
-
 module BarnAll() {
     rotate([90]) {
         BarnWall();
-        Stoop();
+    }
+    translate([DoorLeft - 4.5, 0]) {
+        Stoop(StoopTop);
     }
 }
 

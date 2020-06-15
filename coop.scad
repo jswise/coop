@@ -29,11 +29,11 @@ BarnAll();
 translate([CoopLeft, -CoopDepth, 0]) {
     CoopFrame();
 }
-translate([CoopLeft + CoopWidth, 0, NestingBoxHeight]) {
+translate([CoopLeft + CoopWidth, -4, NestingBoxHeight]) {
     rotate([0, 0, -90]) {
         NestingBox();
     }
 }
 translate([CoopLeft, -CoopDepth, CoopElevation]) {
-    CoopShell();
+    // CoopShell();
 }

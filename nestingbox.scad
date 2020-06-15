@@ -55,7 +55,7 @@ module NestingBoxUnit() {
 }
 
 module NestingBox() {
-    for (i = [1:NestingBoxCount]) {
+    for (i = [0:NestingBoxCount-1]) {
         translate([NestingBoxWidth * i, 0, 0]) {
             NestingBoxUnit();
         }
