@@ -34,6 +34,11 @@ translate([CoopLeft + CoopWidth, -4, NestingBoxHeight]) {
         NestingBox();
     }
 }
+
+module CoopFloor() {
+    palette();
+}
+
 translate([CoopLeft, -CoopDepth, CoopElevation]) {
     // CoopShell();
 }

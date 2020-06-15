@@ -4,7 +4,7 @@ Overhang = 6;
 CoopLeft = Overhang;
 
 CoopWidth = 96;
-CoopDepth = 72;
+CoopDepth = 86;
 CoopFrontHeight = 61.5;
 CoopBackHeight = 80;
 DeltaHeight = CoopBackHeight - CoopFrontHeight;
