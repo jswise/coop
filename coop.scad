@@ -40,5 +40,5 @@ module CoopFloor() {
 }
 
 translate([CoopLeft, -CoopDepth, CoopElevation]) {
-    // CoopShell();
+    CoopShell();
 }
